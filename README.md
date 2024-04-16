@@ -24,8 +24,7 @@ This README provides a guide to setting up and migrating a production database t
 
 ## Project Introduction
 
-In this project, a cloud-based database system will be architectured and implemented on Microsoft Azure, showcasing hands-on expertise in cloud engineering. An on-premise database will be migrated to Azure SQL Database, utilizing various Azure services and tools.
-
+In this project, a cloud-based database system is architected and implemented on Microsoft Azure, showcasing hands-on expertise in cloud engineering. An on-premise database is migrated to Azure SQL Database, utilizing various Azure services and tools.
 
 ## Objectives
 
@@ -71,49 +70,49 @@ In this project, a cloud-based database system will be architectured and impleme
 
 ### Sandbox
 
-A sandbox is a controlled and isolated environment where applications and software can be tested, developed, and experimented with, all without impacting the production systems. To create this development environment, the Windows VM which is currently the Production Environment, with all of its infrastructure, will be duplicated. The purpose of a sandbox allows you to work on the application, test new features, and troubleshoot issues in a safe and isolated environment before making changes in the production system.
+A sandbox is a controlled and isolated environment where applications and software can be tested, developed, and experimented with, all without impacting the production systems. To create this development environment, the Windows VM which is currently the Production Environment, with all of its infrastructure, is duplicated. The purpose of a sandbox is to work on the application, test new features, and troubleshoot issues in a safe and isolated environment before making changes in the production system.
 
 ### Backup Process
 
 - **Full Backup**
-    - Generated a full backup of the production database hosted on the Windows VM.
-    - Stored the resultant backup file in a designated location on my computer.
+    - Generate a full backup of the production database hosted on the Windows VM.
+    - Store the resultant backup file in a designated location on the computer.
 
 ### Azure Blob Storage Configuration
 
 - **Blob Storage Account**
-    - Configured an Azure Blob Storage account to serve as a secure online repository for database backups.
+    - Configure an Azure Blob Storage account to serve as a secure online repository for database backups.
 - **Backup Upload**
-    - Uploaded the production database backup file to the Blob Storage container for redundant backup storage.
+    - Upload the production database backup file to the Blob Storage container for redundant backup storage.
 
 ### Development Environment Provisioning
 
 - **Windows VM Setup**
-    - Provisioned a new Windows VM mirroring the development setup.
-    - Installed SQL Server on this VM to mimic the necessary database infrastructure.
+    - Provision a new Windows VM mirroring the development setup.
+    - Install SQL Server on this VM to mimic the necessary database infrastructure.
 - **Database Restoration**
-    - Restored the production database backup onto the new development environment ("sandbox").
+    - Restore the production database backup onto the new development environment ("sandbox").
 
 ### Automated Backups for Development
 
 - **Management Task in SSMS**
-    - Utilized SQL Server Management Studio (SSMS) to establish a Management Task for automating regular backups of the development database.
+    - Utilize SQL Server Management Studio (SSMS) to establish a Management Task for automating regular backups of the development database.
 - **Backup Schedule**
-    - Configured a weekly backup schedule to ensure consistent protection and simplify recovery for the development environment.
+    - Configure a weekly backup schedule to ensure consistent protection and simplify recovery for the development environment.
 
 ### Testing and Validation
 
 - **Development Environment**
-    - Functionality: Verified the restored database's functionality in the development environment.
-    - Data Integrity: Confirmed data integrity post-restoration, ensuring consistency with the production database.
+    - Functionality: Verify the restored database's functionality in the development environment.
+    - Data Integrity: Confirm data integrity post-restoration, ensuring consistency with the production database.
 - **Automated Backups**
-    - Consistency: Validated the automated backup schedule, ensuring regular and consistent backups.
+    - Consistency: Validate the automated backup schedule, ensuring regular and consistent backups.
 
 ### Insights Gained
 
-- **Data Security**: Leveraging Azure Blob Storage provided an extra layer of backup protection, enhancing data security.
-- **Development Efficiency**: The provisioned development environment ("sandbox") facilitated controlled experimentation and testing without impacting production data.
-- **Operational Resilience**: Automating backups streamlined the backup process, enabling swift recovery and reducing operational overhead.
+- **Data Security**: Leveraging Azure Blob Storage provides an extra layer of backup protection, enhancing data security.
+- **Development Efficiency**: The provisioned development environment ("sandbox") facilitates controlled experimentation and testing without impacting production data.
+- **Operational Resilience**: Automating backups streamlines the backup process, enabling swift recovery and reducing operational overhead.
 
 ## Data Backup and Restore
 
@@ -126,39 +125,35 @@ This segment of the project intentionally induces data loss and corruption in th
 ### Setting up Geo-Replication
 
 - **Azure Portal Setup**
-    - Navigated to the primary database in Azure Portal.
-    - Selected Replicas under the Data management tab.
-    - Created a new replica in a differrent region.
-    - Configured SQL authentication for disaster recovery.
+    - Navigate to the primary database in Azure Portal.
+    - Select Replicas under the Data management tab.
+    - Create a new replica in a different region.
+    - Configure SQL authentication for disaster recovery.
 - **Validation**
-    - Connected to the secondary replica via Azure Data Studio.
-    - Ran queries to ensure data synchronization and functionality.
+    - Connect to the secondary replica via Azure Data Studio.
+    - Run queries to ensure data synchronization and functionality.
 
 ### Failover Setup
- Disaster Recovery Simulation
 
-This segment of the project intentionally induces data loss and corruption in the production environment to evaluate the effectiveness of disaster recovery processes.
-
-## Microsoft Entra ID Authentication
 - **Failover Groups**
-    - Created a new failover group in Azure Portal.
-    - Associated the secondary server as the failover target.
+    - Create a new failover group in Azure Portal.
+    - Associate the secondary server as the failover target.
 
 ### Failover
 
 - **Planned Failover**
-    - Initiated a planned failover from the primary to the secondary region.
+    - Initiate a planned failover from the primary to the secondary region.
 
 ### Tailback
 
 - **Failback**
-    - Initiated a failover back to the primary region after testing.
+    - Initiate a failover back to the primary region after testing.
 
 ### Insights Gained
 
 - **Redundancy**: Geo-replication provides an effective redundancy strategy, ensuring continuous data availability across regions.
-- **Resilience**: The failover mechanism proved resilient, maintaining data integrity and availability during planned transitions.
-- **Operational Confidence**: Conducting planned failovers and failbacks provided valuable insights into the failover process, bolstering confidence in disaster recovery capabilities.
+- **Resilience**: The failover mechanism proves resilient, maintaining data integrity and availability during planned transitions.
+- **Operational Confidence**: Conducting planned failovers and failbacks provides valuable insights into the failover process, bolstering confidence in disaster recovery capabilities.
 
 ## Microsoft entra Directory Integration
 
@@ -168,9 +163,8 @@ This segment of the project intentionally induces data loss and corruption in th
 - Create admin and DB Reader user accounts.
 - Assign roles and test permissions.
 
-
 ## UML Diagram
 
 ## Conclusion
 
-This project has covered various aspects of migrating a database to Azure SQL Database, including environment setup, data migration, backup and restore strategies, geo-replication, authentication, and disaster recovery testing. The README serves as a guide documenting each step, providing insights, and sharing the experience gained throughout the project.
+This project covers various aspects of migrating a database to Azure SQL Database, including environment setup, data migration, backup and restore strategies, geo-replication, authentication, and disaster recovery testing. The README serves as a guide documenting each step, providing insights, and sharing the experience gained throughout the project.
