@@ -121,6 +121,7 @@ A sandbox is a controlled and isolated environment where applications and softwa
 This segment of the project intentionally induces data loss and corruption in the production environment to evaluate the effectiveness of disaster recovery processes.
 
 ## Geo replication and failover
+![Geo rep](https://github.com/mkbr01/azure-database-migration331/blob/main/geo-rep.png)
 
 ### Setting up Geo-Replication
 
@@ -164,6 +165,8 @@ This segment of the project intentionally induces data loss and corruption in th
 - Assign roles and test permissions.
 
 ## UML Diagram
+![UML Diagram](https://github.com/mkbr01/azure-database-migration331/blob/main/Azure%20Project%20Diagram.jpeg)
+
 
 ## Conclusion
 
