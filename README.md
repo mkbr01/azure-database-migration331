@@ -7,7 +7,7 @@
 
 ## Overview
 
-This README provides a comprehensive guide to setting up and migrating a production database to Azure SQL Database. The project aims to demonstrate expertise in cloud engineering by implementing a robust, secure, and efficient database migration process on Microsoft Azure.
+This README provides a guide to setting up and migrating a production database to Azure SQL Database. The project aims to demonstrate expertise in cloud engineering by implementing a robust, secure, and efficient database migration process on Microsoft Azure.
 
 ## Table of Contents
 
@@ -24,7 +24,8 @@ This README provides a comprehensive guide to setting up and migrating a product
 
 ## Project Introduction
 
-In this project, you'll architect and implement a cloud-based database system on Microsoft Azure, showcasing hands-on expertise in cloud engineering. You will migrate an on-premise database to Azure SQL Database, utilizing various Azure services and tools.
+In this project, a cloud-based database system will be architectured and implemented on Microsoft Azure, showcasing hands-on expertise in cloud engineering. An on-premise database will be migrated to Azure SQL Database, utilizing various Azure services and tools.
+
 
 ## Objectives
 
@@ -127,14 +128,18 @@ This segment of the project intentionally induces data loss and corruption in th
 - **Azure Portal Setup**
     - Navigated to the primary database in Azure Portal.
     - Selected Replicas under the Data management tab.
-    - Created a new replica in East US region.
+    - Created a new replica in a differrent region.
     - Configured SQL authentication for disaster recovery.
 - **Validation**
     - Connected to the secondary replica via Azure Data Studio.
     - Ran queries to ensure data synchronization and functionality.
 
 ### Failover Setup
+ Disaster Recovery Simulation
 
+This segment of the project intentionally induces data loss and corruption in the production environment to evaluate the effectiveness of disaster recovery processes.
+
+## Microsoft Entra ID Authentication
 - **Failover Groups**
     - Created a new failover group in Azure Portal.
     - Associated the secondary server as the failover target.
@@ -163,12 +168,9 @@ This segment of the project intentionally induces data loss and corruption in th
 - Create admin and DB Reader user accounts.
 - Assign roles and test permissions.
 
-### Documentation
-
-- Update README with Microsoft Entra ID integration details.
 
 ## UML Diagram
 
 ## Conclusion
 
-This project has covered various aspects of migrating a database to Azure SQL Database, including environment setup, data migration, backup and restore strategies, geo-replication, authentication, and disaster recovery testing. The README serves as a comprehensive guide documenting each step, providing insights, and sharing the experience gained throughout the project.
+This project has covered various aspects of migrating a database to Azure SQL Database, including environment setup, data migration, backup and restore strategies, geo-replication, authentication, and disaster recovery testing. The README serves as a guide documenting each step, providing insights, and sharing the experience gained throughout the project.
