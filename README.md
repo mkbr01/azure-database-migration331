@@ -12,13 +12,15 @@ This README provides a comprehensive guide to setting up and migrating a product
 ## Table of Contents
 
 1. [Project Introduction](#project-introduction)
-2. [Environment Setup](#environment-setup)
-3. [Database Migration](#database-migration)
-4. [Data Backup and Restore](#data-backup-and-restore)
-5. [Geo-Replication and Failover](#geo-replication-and-failover)
-6. [Microsoft Entra ID Authentication](#microsoft-entra-id-authentication)
-7. [UML Diagram](#uml-diagram)
-8. [Conclusion](#conclusion)
+2. [Set up the Environment](#set-up-the-environment)
+3. [Set up the production environment](#set-up-the-production-environment)
+4. [Migrate to Azure SQL Database](#migrate-to-azure-sql-database)
+5. [Data Backup and Restore](#data-backup-and-restore)
+6. [Disaster Recovery Simulation](#disaster-recovery-simulation)
+7. [Geo replication and failover](#geo-replication-and-failover)
+8. [Microsoft entra Directory Integration](#microsoft-entra-directory-integration)
+9. [UML Diagram](#uml-diagram)
+10. [Conclusion](#conclusion)
 
 ## Project Introduction
 
@@ -32,7 +34,7 @@ In this project, you'll architect and implement a cloud-based database system on
 - Configure geo-replication for enhanced data resilience.
 - Integrate Microsoft Entra ID authentication for user management.
 
-## Environment Setup
+## Set up the Environment
 
 ### Windows Virtual Machine (VM)
 
@@ -46,7 +48,7 @@ In this project, you'll architect and implement a cloud-based database system on
 - Set up Azure Blob Storage for database backups.
 - Create an Azure SQL Database for migration target.
 
-## Database Migration
+## Set up the production environment
 
 ### Initial Setup
 
@@ -64,7 +66,11 @@ In this project, you'll architect and implement a cloud-based database system on
 - Validate migration success by checking data integrity and configurations.
 - Document migration process and achievements in README.
 
-## Data Backup and Restore
+## Migrate to Azure SQL Database
+
+### Sandbox
+
+A sandbox is a controlled and isolated environment where applications and software can be tested, developed, and experimented with, all without impacting the production systems. To create this development environment, the Windows VM which is currently the Production Environment, with all of its infrastructure, will be duplicated. The purpose of a sandbox allows you to work on the application, test new features, and troubleshoot issues in a safe and isolated environment before making changes in the production system.
 
 ### Backup Process
 
@@ -108,7 +114,13 @@ In this project, you'll architect and implement a cloud-based database system on
 - **Development Efficiency**: The provisioned development environment ("sandbox") facilitated controlled experimentation and testing without impacting production data.
 - **Operational Resilience**: Automating backups streamlined the backup process, enabling swift recovery and reducing operational overhead.
 
-## Geo-Replication and Failover
+## Data Backup and Restore
+
+### Disaster Recovery Simulation
+
+This segment of the project intentionally induces data loss and corruption in the production environment to evaluate the effectiveness of disaster recovery processes.
+
+## Geo replication and failover
 
 ### Setting up Geo-Replication
 
@@ -143,7 +155,7 @@ In this project, you'll architect and implement a cloud-based database system on
 - **Resilience**: The failover mechanism proved resilient, maintaining data integrity and availability during planned transitions.
 - **Operational Confidence**: Conducting planned failovers and failbacks provided valuable insights into the failover process, bolstering confidence in disaster recovery capabilities.
 
-## Microsoft Entra ID Authentication
+## Microsoft entra Directory Integration
 
 ### Integration Steps
 
@@ -157,7 +169,6 @@ In this project, you'll architect and implement a cloud-based database system on
 
 ## UML Diagram
 
-
 ## Conclusion
 
-This project has covered various aspects of migrating a database to Azure SQL Database, including environment setup, data migration, backup and restore strategies, geo-replication, and authentication. The README serves as a comprehensive guide documenting each step, providing insights, and sharing the experience gained throughout the project.
+This project has covered various aspects of migrating a database to Azure SQL Database, including environment setup, data migration, backup and restore strategies, geo-replication, authentication, and disaster recovery testing. The README serves as a comprehensive guide documenting each step, providing insights, and sharing the experience gained throughout the project.
